@@ -12,7 +12,6 @@ class WeatherAPI {
       appid: API_CONFIG.API_KEY,
       ...params,
     });
-
     return `${endpoint}?${searchParams.toString()}`;
   }
 
@@ -30,7 +29,7 @@ class WeatherAPI {
     const url = this.createUrl(`${API_CONFIG.BASE_URL}/weather`, {
       lat: lat.toString(),
       lon: lon.toString(),
-      units: API_CONFIG.DEFAULT_PARAMS.units,
+      units: "metric",
     });
     return this.fetchData<WeatherData>(url);
   }
@@ -39,7 +38,7 @@ class WeatherAPI {
     const url = this.createUrl(`${API_CONFIG.BASE_URL}/forecast`, {
       lat: lat.toString(),
       lon: lon.toString(),
-      units: API_CONFIG.DEFAULT_PARAMS.units,
+      units: "metric",
     });
     return this.fetchData<ForecastData>(url);
   }
@@ -51,7 +50,7 @@ class WeatherAPI {
     const url = this.createUrl(`${API_CONFIG.GEO}/reverse`, {
       lat: lat.toString(),
       lon: lon.toString(),
-      limit: 1,
+      limit: "1",
     });
     return this.fetchData<GeocodingResponse[]>(url);
   }
