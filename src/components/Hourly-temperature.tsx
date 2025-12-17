@@ -28,7 +28,7 @@ export function HourlyTemperature({ data }: HourlyTemperatureProps) {
   }));
 
   return (
-    <Card className="flex-1">
+    <Card>
       <CardHeader>
         <CardTitle>Today's Temperature</CardTitle>
       </CardHeader>

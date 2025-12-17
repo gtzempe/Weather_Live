@@ -116,7 +116,7 @@ export function WeatherDashboard() {
       </div>
 
       <div className="grid gap-6">
-        <div className="flex flex-col lg:flex-row gap-4">
+        <div className="grid gap-6 lg:grid-cols-2">
           <CurrentWeather
             data={weatherQuery.data}
             locationName={locationName}
@@ -124,7 +124,7 @@ export function WeatherDashboard() {
           <HourlyTemperature data={forecastQuery.data} />
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 items-start">
+        <div className="grid gap-6 sm:grid-cols-2">
           <WeatherDetails data={weatherQuery.data} />
           <WeatherForecast data={forecastQuery.data} />
         </div>
